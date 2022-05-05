@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <div class="image">
+
+    </div>
+    
+    <div class="container">
+        <div class="heading">
+            <div>
+                <strong>
+                    This is not a real online service!
+                    You know you need something like this in your life to help you realize your deepest dreams.<br>
+                    Sign up now to get started.
+                </strong>
+            </div>
+            <div>
+                <strong>
+                    You <i>know</i> you want to.
+             </strong>
+            </div>
+        
+        </div>
+        <div class="form">
+            <div class="formHead">
+                <strong>Let's do this!</strong>
+            </div>
+            <div class="formBody">
+                <div class="left">
+                    <label>FIRST NAME</label>
+                    <input type="text" id="fname">
+                    <label>EMAIL</label>
+                    <input type="email" id="email">
+                    <label>PASSWORD</label>
+                    <input type="password" id="pswd" class="error">
+                    <span id="message"></span>
+                </div>
+                <div class="right">
+                    <label>LAST NAME</label>
+                    <input type="text" id="lname">
+                    <label>PHONE NUMBER</label>
+                    <input type="ph" id="ph" >
+                    <label>CONFIRM PASSWORD</label>
+                    <input type="password" id="cpswd" class="error" onkeyup="check_password()">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="button">
+                <input type="submit" value="Create Account">
+            </div>
+            <div class="login">
+                Already have an account? <span class="login">Log in</span>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        function check_password(){
+            password = document.getElementById("pswd").value;
+            cpassword = document.getElementById("cpswd").value;
+            message = document.getElementById("message");
+            box = document.getElementsByClassName("error");
+            if (cpassword === password){
+                message.innerHTML = " ";
+                box[0].style.borderColor = "black";
+                box[1].style.borderColor = "black";
+            }
+            if (cpassword != password){
+                message.innerHTML = "*Passwords do not match";
+                message.style.fontSize = "x-small";
+                message.style.color = "red";
+                box[0].style.borderColor = "red";
+                box[1].style.borderColor = "red";
+ 
+            }
+
+
+        }
+    </script>
+</body>
+</html>
